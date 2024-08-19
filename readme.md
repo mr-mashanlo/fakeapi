@@ -6,7 +6,7 @@
 
 1. **Клонировать репозиторий**:
 ```bash
-git clone <repository_url>
+git clone https://github.com/mr-mashanlo/fakeapi.git
 ```
 
 2. **Перейти в папку**:
