@@ -1,9 +1,9 @@
 const jwt = require( 'jsonwebtoken' );
-const { Unauthorized } = require( '../services/error' );
+const { Unauthorized } = require( '../services/errorService' );
 
 const authMiddleware = async ( req, res, next ) => {
 
-  const token = req.headers.authorization ? req.headers.authorization.split( ' ' )[ 1 ] : null;
+  const token = req.headers.authorization ? req.headers.authorization.split( ' ' )[1] : null;
   if ( !token ) {
     return next( new Unauthorized( 'Access denied' ) );
   }

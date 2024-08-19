@@ -72,7 +72,7 @@ class PostController {
         created: '2024-08-19T11:00:00Z',
         author: 110
       }
-    ]
+    ];
   }
 
   getAll = ( req, res, next ) => {
@@ -86,7 +86,7 @@ class PostController {
   getOne = ( req, res, next ) => {
     try {
       const id = req.params.id;
-      const post = this.posts.find( post => post.id === id)
+      const post = this.posts.find( post => post.id === id );
       return res.send( post );
     } catch ( error ) {
       next( error );
@@ -95,7 +95,7 @@ class PostController {
 
   create = ( req, res, next ) => {
     try {
-      const {post} = req.body;
+      const { post } = req.body;
       return res.send( [ ...this.posts, post ] );
     } catch ( error ) {
       next( error );
@@ -104,8 +104,8 @@ class PostController {
 
   update = ( req, res, next ) => {
     try {
-      const {id, body} = req.body;
-      const post = this.posts.find( post => post.id === id)
+      const { id, body } = req.body;
+      const post = this.posts.find( post => post.id === id );
       return res.send( [ ...this.posts, { ...post, ...body } ] );
     } catch ( error ) {
       next( error );
@@ -115,7 +115,7 @@ class PostController {
   delete = ( req, res, next ) => {
     try {
       const id = req.params.id;
-      const posts = this.posts.filter( post => post.id !== id)
+      const posts = this.posts.filter( post => post.id !== id );
       return res.send( posts );
     } catch ( error ) {
       next( error );
