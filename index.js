@@ -3,12 +3,14 @@ const cors = require( 'cors' );
 const express = require( 'express' );
 const errorMiddleware = require( './middlewares/errorMiddleware' );
 const authRouter = require( './routers/authRouter' );
+const userRouter = require( './routers/userRouter' );
 const postRouter = require( './routers/postRouter' );
 
 const app = express();
 app.use( cors( { origin: '*' } ) );
 app.use( express.json() );
 app.use( '/auth', authRouter );
+app.use( '/users', userRouter );
 app.use( '/posts', postRouter );
 app.use( errorMiddleware );
 

@@ -13,6 +13,11 @@ const authMiddleware = async ( req, res, next ) => {
     return next( new Unauthorized( 'Your token has expired' ) );
   }
 
+  req.me = {
+    id: verifiedToken.id,
+    email: verifiedToken.email
+  };
+
   next();
 };
 

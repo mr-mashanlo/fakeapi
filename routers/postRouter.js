@@ -3,7 +3,7 @@ const router = new Router();
 const postController = require( '../controllers/postController' );
 const authMiddleware = require( '../middlewares/authMiddleware' );
 
-router.post( '/create', authMiddleware, postController.create );
+router.post( '/', authMiddleware, postController.create );
 router.get( '/all', authMiddleware, postController.getAll );
 router.get( '/:id', authMiddleware, postController.getOne );
 router.put( '/:id', authMiddleware, postController.update );
